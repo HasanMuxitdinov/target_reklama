@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro‘yxatdan o‘tish | HAVAS FASHION</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 25px 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #ffb000, #ff9500);
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
+
+        .form-box {
+            width: 100%;
+            max-width: 430px;
+            padding: 30px 22px;
+            background: #fffaf0;
+            border-radius: 24px;
+            box-shadow: 0 8px 25px #0002;
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 27px;
+        }
+
+        .description {
+            text-align: center;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 17px;
+            border: none;
+            border-radius: 40px;
+            background: #ffb900;
+            color: #111;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="form-box">
+        <h1>HAVAS FASHION</h1>
+
+        <p class="description">
+            Ro‘yxatdan o‘tish uchun ma’lumotlaringizni kiriting.
+        </p>
+
+        <form action="/register" method="POST">
+            <label for="first_name">Ismingiz</label>
+            <input
+                id="first_name"
+                name="first_name"
+                type="text"
+                placeholder="Ismingizni kiriting"
+                autocomplete="given-name"
+                maxlength="60"
+                required
+            >
+
+            <label for="last_name">Familiyangiz</label>
+            <input
+                id="last_name"
+                name="last_name"
+                type="text"
+                placeholder="Familiyangizni kiriting"
+                autocomplete="family-name"
+                maxlength="60"
+                required
+            >
+
+            <button type="submit">DAVOM ETISH</button>
+        </form>
+
+        <a class="back" href="/">← Bosh sahifaga qaytish</a>
+    </main>
+</body>
+</html>

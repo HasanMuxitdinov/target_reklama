@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAVAS FASHION</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ffb000, #ff9500);
+            color: #000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px 22px 40px;
+        }
+
+        .logo {
+            display: block;
+            width: 100%;
+            max-width: 340px;
+            height: 430px;
+            object-fit: contain;
+            margin: 0 auto 25px;
+        }
+
+        .register-btn {
+            display: block;
+            width: 100%;
+            padding: 25px 12px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(#ffe5a5, #ffd05c);
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 7px 0 #d98c00;
+            cursor: pointer;
+        }
+
+        .timer {
+            margin-top: 38px;
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .timer-caption {
+            margin-top: 8px;
+            font-size: 17px;
+        }
+
+        .contact {
+            margin-top: 45px;
+            padding: 28px 18px;
+            border: 2px solid white;
+            border-radius: 22px;
+        }
+
+        .contact p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .phone {
+            display: block;
+            margin-top: 22px;
+            padding: 22px 10px;
+            border-radius: 18px;
+            background: white;
+            color: black;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media (max-width: 380px) {
+            .logo {
+                height: 350px;
+            }
+
+            .register-btn {
+                font-size: 18px;
+            }
+
+            .phone {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <img
+            src="{{ url_for('static', filename='havas_logo.jpeg.jpg') }}"
+            alt="HAVAS FASHION logotipi"
+            class="logo"
+        >
+
+        <a href="/register" class="register-btn">
+            RO'YXATDAN O'TISH ›
+        </a>
+
+        <div class="timer" id="timer">01:57</div>
+        <div class="timer-caption">
+            Aksiya vaqti cheklangan!
+        </div>
+
+        <section class="contact">
+            <p>
+                Ma'lumot olish uchun bizning
+                ishonchli telefon raqamimiz:
+            </p>
+
+            <a href="tel:+998945432496" class="phone">
+                ☎ +998 94 543 24 96
+            </a>
+        </section>
+
+    </main>
+    
+<script>
+    let totalSeconds = 117;
+
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        timerElement.textContent =
+            String(minutes).padStart(2, "0") + ":" +
+            String(seconds).padStart(2, "0");
+
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            clearInterval(timerInterval);
+        }
+    }
+
+    updateTimer();
+
+    const timerInterval = setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
